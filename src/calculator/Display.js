@@ -3,6 +3,7 @@ import React from 'react';
 function Display(props) {
   return (
     <textarea
+      readOnly
       rows="5"
       id={props.identity}
       className={props.category}
