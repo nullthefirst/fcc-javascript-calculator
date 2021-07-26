@@ -2,8 +2,35 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  font-size: 16px;
+  padding: 1rem;
 }
 
 #title {
   color: #167bff;
+}
+
+.calculator-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.grid-button {
+  flex-grow: 1;
+  margin: 1rem;
+  height: 2rem;
+  width: 2rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.button-command {
+  color: #f0f0f0;
+  background-color: #167bff;
+}
+
+.button-number {
+  color: #167bff;
+  background-color: #f0f0f0;
 }
