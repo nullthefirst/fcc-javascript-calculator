@@ -7,7 +7,7 @@
 }
 
 #title {
-  color: #167bff;
+  color: #f0f0f0;
 }
 
 .calculator-row {
@@ -19,18 +19,27 @@
 .grid-button {
   flex-grow: 1;
   margin: 1rem;
-  height: 2rem;
-  width: 2rem;
   font-weight: bold;
   font-size: 1.5rem;
 }
 
 .button-command {
+  height: 2rem;
+  width: 2rem;
+  color: #f0f0f0;
+  background-color: #167bff;
+}
+
+.button-command-alt {
+  height: 2.45rem;
+  width: 2.45rem;
   color: #f0f0f0;
   background-color: #167bff;
 }
 
 .button-number {
+  height: 2rem;
+  width: 2rem;
   color: #167bff;
   background-color: #f0f0f0;
 }
@@ -38,12 +47,10 @@
 .display-area {
   color: #232425;
   background-color: #f0f0f0;
-  flex-grow: 11;
   margin: 1rem;
-  height: 2rem;
-  width: auto;
   font-weight: bold;
   font-size: 1.5rem;
   text-align: right;
   padding-right: 0.5rem;
+  overflow: hidden scroll;
 }
