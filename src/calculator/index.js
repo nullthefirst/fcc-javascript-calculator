@@ -1,11 +1,22 @@
 import React from 'react';
 import Button from './Button';
+import Display from './Display';
 
 class Calculator extends React.Component {
   render() {
     return (
       <div>
         <h1 id="title">JavaScript Calculator</h1>
+        <div class="calculator-row">
+          <Button
+            identity="equals"
+            category="grid-button button-command"
+            clicked={() => console.log('clicked')}
+            value="="
+          />
+          <Display identity="display" category="display-area" content="..." />
+        </div>
+
         <div class="calculator-row">
           <Button
             identity="one"
