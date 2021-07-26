@@ -9,6 +9,7 @@ class Calculator extends React.Component {
       display: '0',
     };
     this.handleInput = this.handleInput.bind(this);
+    this.clearInput = this.clearInput.bind(this);
   }
 
   handleInput(e) {
@@ -17,9 +18,15 @@ class Calculator extends React.Component {
       display:
         this.state.display === '0'
           ? e.target.innerText
-          : this.state.display + ' ' + e.target.innerText,
+          : this.state.display + e.target.innerText,
     });
     console.log(this.state.display);
+  }
+
+  clearInput() {
+    this.setState({
+      display: '0',
+    });
   }
 
   render() {
@@ -56,7 +63,7 @@ class Calculator extends React.Component {
           <Button
             identity="clear"
             category="grid-button button-command"
-            clicked={this.handleInput}
+            clicked={this.clearInput}
             value="C"
           />
         </div>
