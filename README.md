@@ -39,3 +39,7 @@ In any order, I should be able to add, subtract, multiply and divide a chain of 
 > User Story # 10
 
 When inputting numbers, my calculator should not allow a number to begin with multiple zeros.
+
+> User Story # 11
+
+When the decimal element is clicked, a . should append to the currently displayed value; two . in one number should not be accepted.

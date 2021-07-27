@@ -38,10 +38,7 @@ class Calculator extends React.Component {
       display:
         this.state.display === '0'
           ? e.target.innerText
-          : this.state.display.charAt(this.state.display.length - 1) === '.' &&
-            e.target.innerText === '.'
-          ? this.parseDecimals(this.state.display)
-          : this.state.display + e.target.innerText,
+          : this.parseDecimals(this.state.display) + e.target.innerText,
     });
     console.log(this.state.display.charAt(this.state.display.length - 1));
   }
@@ -54,7 +51,7 @@ class Calculator extends React.Component {
 
   calculation() {
     this.setState({
-      display: evaluate(this.state.display),
+      display: `${evaluate(this.state.display)}`,
     });
   }
 
