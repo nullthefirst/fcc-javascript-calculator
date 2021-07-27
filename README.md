@@ -43,3 +43,15 @@ When inputting numbers, my calculator should not allow a number to begin with mu
 > User Story # 11
 
 When the decimal element is clicked, a . should append to the currently displayed value; two . in one number should not be accepted.
+
+> User Story # 12
+
+I should be able to perform any operation (+, -, \*, /) on numbers containing decimal points.
+
+> User Story # 14
+
+Pressing an operator immediately following = should start a new calculation that operates on the result of the previous evaluation.
+
+> User Story # 15
+
+My calculator should have several decimal places of precision when it comes to rounding (note that there is no exact standard, but you should be able to handle calculations like 2 / 7 with reasonable precision to at least 4 decimal place
