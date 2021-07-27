@@ -57,9 +57,25 @@ function parserCore(arithmeticString) {
   }
 
   arithBucket.push(parseDecimals(numString));
+  arithBucket.push(parseOperators(symbolString));
 
-  // return arithBucket.join('');
-  return cleanArray(arithBucket);
+  return cleanArray(arithBucket).join('');
+  // return cleanArray(arithBucket);
+}
+
+function cleanExpression(expressionInput) {
+  const expressionInputArray = expressionInput.split('');
+
+  function hangingOperatorRemoval(arr) {
+    while (symbols.includes(arr[arr.length - 1])) {
+      arr.pop();
+    }
+    return arr;
+  }
+
+  const expressionOutput = hangingOperatorRemoval(expressionInputArray);
+
+  return expressionOutput;
 }
 
 function cleanArray(arr) {
@@ -67,7 +83,7 @@ function cleanArray(arr) {
 }
 
 // console.log(parserCore('3..5+/2/-1.5'));
-console.log(parserCore('3..5+--/-2'));
+console.log(cleanExpression(parserCore('3..5+/2+-')));
 
 module.exports = {
   parserCore: parserCore,
