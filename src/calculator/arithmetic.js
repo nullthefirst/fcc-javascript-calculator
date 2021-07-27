@@ -1,15 +1,17 @@
-function parseDecimals(numString) {
-  let arr = [];
+const symbols = ['+', '-', '/', '*'];
 
-  for (let char of numString) {
-    if (arr.some((el) => el === '.') && char === '.') {
+function parseDecimals(numberString) {
+  let cleanedNumber = '';
+
+  for (let char of numberString) {
+    if (cleanedNumber.includes('.') && char === '.') {
       continue;
     } else {
-      arr.push(char);
+      cleanedNumber += char;
     }
   }
 
-  return arr.join('');
+  return cleanedNumber;
 }
 
 function parserCore(arithmeticString) {
@@ -17,26 +19,25 @@ function parserCore(arithmeticString) {
 
   let numString = '';
 
-  const symbols = ['+', '-', '/', '*'];
-
   for (let char of arithmeticString) {
     if (symbols.some((el) => el === char)) {
-      arithBucket.push(numString);
+      arithBucket.push(parseDecimals(numString));
       arithBucket.push(char);
       numString = '';
     } else {
-      numString += char;
+      if (numString.charAt(numString.length - 1) === '.' && char === '.') {
+        continue;
+      } else {
+        numString += char;
+      }
     }
   }
 
-  arithBucket.push(numString);
+  arithBucket.push(parseDecimals(numString));
 
-  return arithBucket;
+  return arithBucket.join('');
 }
-
-console.log(parserCore('3.5+1.5'));
 
 module.exports = {
   parserCore: parserCore,
-  parseDecimals: parseDecimals,
 };
