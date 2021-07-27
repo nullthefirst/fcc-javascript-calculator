@@ -2,13 +2,9 @@ import React from 'react';
 
 function Display(props) {
   return (
-    <textarea
-      readOnly
-      rows="5"
-      id={props.identity}
-      className={props.category}
-      value={props.content}
-    />
+    <div id={props.identity} className={props.category}>
+      {props.content}
+    </div>
   );
 }
 
