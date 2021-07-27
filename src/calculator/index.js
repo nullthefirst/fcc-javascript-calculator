@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './Button';
 import Display from './Display';
 import { evaluate } from 'mathjs';
-import { parserCore } from './arithmetic';
+import { parserCore, cleanExpression } from './arithmetic';
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -33,8 +33,10 @@ class Calculator extends React.Component {
   }
 
   calculation() {
+    const mathExpression = cleanExpression(parserCore(this.state.display));
+
     this.setState({
-      display: `${evaluate(this.state.display)}`,
+      display: `${evaluate(mathExpression)}`,
     });
   }
 

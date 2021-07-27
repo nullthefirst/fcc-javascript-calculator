@@ -60,7 +60,6 @@ function parserCore(arithmeticString) {
   arithBucket.push(parseOperators(symbolString));
 
   return cleanArray(arithBucket).join('');
-  // return cleanArray(arithBucket);
 }
 
 function cleanExpression(expressionInput) {
@@ -75,7 +74,7 @@ function cleanExpression(expressionInput) {
 
   const expressionOutput = hangingOperatorRemoval(expressionInputArray);
 
-  return expressionOutput;
+  return expressionOutput.join('');
 }
 
 function cleanArray(arr) {
@@ -83,8 +82,9 @@ function cleanArray(arr) {
 }
 
 // console.log(parserCore('3..5+/2/-1.5'));
-console.log(cleanExpression(parserCore('3..5+/2+-')));
+// console.log(cleanExpression(parserCore('3..5+/2+-1.5//')));
 
 module.exports = {
   parserCore: parserCore,
+  cleanExpression: cleanExpression,
 };
