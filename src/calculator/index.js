@@ -14,15 +14,36 @@ class Calculator extends React.Component {
     this.calculation = this.calculation.bind(this);
   }
 
+  parseDecimals(numString) {
+    let arr = [];
+    for (let char of numString) {
+      if (arr.some((el) => el === '.') && char === '.') {
+        continue;
+      } else {
+        arr.push(char);
+      }
+    }
+
+    let cleanedString = '';
+    for (let el of arr) {
+      cleanedString += el;
+    }
+
+    return cleanedString;
+  }
+
   handleInput(e) {
     // console.log(e.target.innerText);
     this.setState({
       display:
         this.state.display === '0'
           ? e.target.innerText
+          : this.state.display.charAt(this.state.display.length - 1) === '.' &&
+            e.target.innerText === '.'
+          ? this.parseDecimals(this.state.display)
           : this.state.display + e.target.innerText,
     });
-    console.log(this.state.display);
+    console.log(this.state.display.charAt(this.state.display.length - 1));
   }
 
   clearInput() {
