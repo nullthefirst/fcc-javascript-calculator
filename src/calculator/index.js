@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import Display from './Display';
+import { evaluate } from 'mathjs';
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class Calculator extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.clearInput = this.clearInput.bind(this);
+    this.calculation = this.calculation.bind(this);
   }
 
   handleInput(e) {
@@ -29,6 +31,12 @@ class Calculator extends React.Component {
     });
   }
 
+  calculation() {
+    this.setState({
+      display: evaluate(this.state.display),
+    });
+  }
+
   render() {
     return (
       <div>
@@ -37,7 +45,7 @@ class Calculator extends React.Component {
           <Button
             identity="equals"
             category="grid-button button-command-alt"
-            clicked={() => console.log('clicked')}
+            clicked={this.calculation}
             value="="
           />
         </div>
