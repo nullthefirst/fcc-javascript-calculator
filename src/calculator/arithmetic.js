@@ -87,7 +87,9 @@ function cleanArray(arr) {
   return arr.filter((el) => el !== '' && el !== 'undefined');
 }
 
-module.exports = {
+const arithmetic = {
   parserCore: parserCore,
   cleanExpression: cleanExpression,
 };
+
+export default arithmetic;
