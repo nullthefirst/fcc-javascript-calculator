@@ -16,7 +16,6 @@ class Calculator extends React.Component {
   }
 
   handleInput(e) {
-    // console.log(e.target.innerText);
     this.setState({
       display:
         this.state.display === '0'
@@ -33,9 +32,6 @@ class Calculator extends React.Component {
 
   calculation() {
     const mathExpression = cleanExpression(this.state.display);
-    // const mathExpression = this.state.display;
-
-    console.log(mathExpression);
 
     this.setState({
       display: `${evaluate(mathExpression)}`,

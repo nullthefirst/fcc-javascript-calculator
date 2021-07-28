@@ -87,9 +87,6 @@ function cleanArray(arr) {
   return arr.filter((el) => el !== '' && el !== 'undefined');
 }
 
-// console.log(parserCore('3..5+/2/-1.5'));
-// console.log(cleanExpression(parserCore('3..5+/2+-1.5//')));
-
 module.exports = {
   parserCore: parserCore,
   cleanExpression: cleanExpression,
