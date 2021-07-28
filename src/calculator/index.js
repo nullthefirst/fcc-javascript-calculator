@@ -23,7 +23,6 @@ class Calculator extends React.Component {
           ? e.target.innerText
           : parserCore(this.state.display + e.target.innerText),
     });
-    console.log(this.state.display.charAt(this.state.display.length - 1));
   }
 
   clearInput() {
@@ -33,7 +32,10 @@ class Calculator extends React.Component {
   }
 
   calculation() {
-    const mathExpression = cleanExpression(parserCore(this.state.display));
+    const mathExpression = cleanExpression(this.state.display);
+    // const mathExpression = this.state.display;
+
+    console.log(mathExpression);
 
     this.setState({
       display: `${evaluate(mathExpression)}`,

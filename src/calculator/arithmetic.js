@@ -24,8 +24,12 @@ function parseOperators(symbolString) {
 
   if (operatorBucket[operatorBucket.length - 1] !== '-') {
     operatorBlock += operatorBucket[operatorBucket.length - 1];
-  } else {
+  } else if (
+    operatorBucket.includes(operatorBucket[operatorBucket.length - 2])
+  ) {
     operatorBlock += operatorBucket[operatorBucket.length - 2];
+    operatorBlock += operatorBucket[operatorBucket.length - 1];
+  } else {
     operatorBlock += operatorBucket[operatorBucket.length - 1];
   }
 
@@ -74,7 +78,9 @@ function cleanExpression(expressionInput) {
 
   const expressionOutput = hangingOperatorRemoval(expressionInputArray);
 
-  return expressionOutput.join('');
+  const cleanedExpression = cleanArray(expressionOutput).join('');
+
+  return cleanedExpression;
 }
 
 function cleanArray(arr) {
