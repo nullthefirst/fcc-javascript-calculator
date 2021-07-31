@@ -55,3 +55,17 @@
   padding-right: 0.5rem;
   overflow: hidden scroll;
 }
+
+#footer {
+  display: flex;
+  justify-content: center;
+  color: #167bff;
+}
+
+#footer:hover {
+  color: #f0f0f0;
+}
+
+#footer:visited {
+  color: #167bff;
+}

@@ -3,6 +3,7 @@ import Button from './Button';
 import Display from './Display';
 import { evaluate } from 'mathjs';
 import arithmetic from './arithmetic';
+import Footer from './Footer';
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -161,6 +162,7 @@ class Calculator extends React.Component {
             content={this.state.display}
           />
         </div>
+        <Footer />
       </div>
     );
   }
