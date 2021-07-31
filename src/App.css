@@ -60,6 +60,7 @@
   display: flex;
   justify-content: center;
   color: #167bff;
+  text-decoration: none;
 }
 
 #footer:hover {
